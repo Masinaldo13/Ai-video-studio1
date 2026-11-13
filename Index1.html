@@ -1,0 +1,115 @@
+<!DOCTYPE html><html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Video Studio</title>
+<style>
+*{box-sizing:border-box}
+body{
+margin:0;
+font-family:Tahoma,Arial;
+background:#0b1020;
+color:white;
+}
+header{
+padding:25px;
+text-align:center;
+background:#151d35;
+border-bottom:1px solid #293657;
+}
+header h1{color:#8b9cff;margin:0}
+.container{
+max-width:850px;
+margin:40px auto;
+padding:20px;
+}
+.card{
+background:#151d35;
+padding:25px;
+border-radius:18px;
+border:1px solid #293657;
+}
+textarea,input,select{
+width:100%;
+padding:15px;
+margin:12px 0;
+border-radius:10px;
+border:1px solid #39486b;
+background:#0b1020;
+color:white;
+font-size:15px;
+}
+button{
+width:100%;
+padding:16px;
+border:0;
+border-radius:10px;
+background:#6578ff;
+color:white;
+font-size:17px;
+cursor:pointer;
+}
+button:hover{background:#8290ff}
+#result{
+margin-top:25px;
+padding:20px;
+background:#0b1020;
+border-radius:12px;
+display:none;
+line-height:2;
+}
+footer{
+text-align:center;
+padding:30px;
+color:#8b95b5;
+}
+</style>
+</head>
+<body><header>
+<h1>🎬 AI Video Studio</h1>
+<p>استودیوی هوشمند ساخت ویدئو با هوش مصنوعی</p>
+</header><div class="container">
+<div class="card"><h2>ساخت ویدئوی هوش مصنوعی</h2><label>توضیحات ویدئوی موردنظر:</label>
+
+<textarea id="prompt" rows="5" placeholder="مثلاً یک ماشین اسپرت در خیابان‌های آینده..."></textarea><label>سبک ویدئو:</label>
+<select id="style">
+
+<option>واقع‌گرایانه</option>
+<option>سینمایی</option>
+<option>انیمیشنی</option>
+<option>فانتزی</option>
+<option>تبلیغاتی</option>
+</select><label>مدت زمان:</label>
+<select id="duration">
+
+<option>5 ثانیه</option>
+<option>10 ثانیه</option>
+<option>15 ثانیه</option>
+<option>30 ثانیه</option>
+</select><button onclick="generateVideo()">✨ آماده‌سازی پروژه ویدئو</button>
+
+<div id="result"></div></div>
+</div><footer>
+AI Video Studio | نسخه اولیه
+</footer><script>
+function generateVideo(){
+const prompt=document.getElementById("prompt").value.trim();
+const style=document.getElementById("style").value;
+const duration=document.getElementById("duration").value;
+const result=document.getElementById("result");
+
+if(!prompt){
+alert("لطفاً توضیحات ویدئو را وارد کن.");
+return;
+}
+
+result.style.display="block";
+result.innerHTML=
+"✅ درخواست شما آماده شد!<br><br>"+
+"🎨 سبک: "+style+"<br>"+
+"⏱ مدت: "+duration+"<br>"+
+"📝 توضیحات: "+prompt+"<br><br>"+
+"این نسخه رابط کاربری اولیه است. برای تولید واقعی ویدئو باید موتور هوش مصنوعی را به پروژه متصل کنیم.";
+}
+</script></body>
+</html>
